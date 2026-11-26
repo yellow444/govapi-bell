@@ -13,7 +13,8 @@ def read_snapshot(path):
     data = json.loads(path.read_text(encoding="utf-8-sig"))
     try:
         country, organization, environment = (data[key] for key in ("country", "organization", "environment"))
-        if (data["schema"] != 1 or not re.fullmatch(r"[a-z]{2}", country) or
+        if (type(data["schema"]) is not int or data["schema"] != 1 or
+                not re.fullmatch(r"[a-z]{2}", country) or
                 not re.fullmatch(r"[A-Za-z0-9][A-Za-z0-9_-]{0,63}", organization) or
                 environment not in ("demo", "test", "prod") or not isinstance(data["items"], list)):
             raise ValueError("Invalid snapshot context.")
