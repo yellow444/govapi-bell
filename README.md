@@ -18,6 +18,8 @@ On a fresh archive, the first import prints `Bell: added 2, total 2`. The second
 
 To display this export in Core, clone both repositories as siblings and follow [Add the Bell demo feed](https://github.com/yellow444/govapi-core#add-the-bell-demo-feed). The demo feed belongs to the Russia plugin.
 
+The [single-organization guide](SINGLE_ORGANIZATION.md) covers archive isolation, repeat imports, verification in Core, and the checks to complete before connecting a provider.
+
 ## Feed contract
 
 A version 1 snapshot contains:
